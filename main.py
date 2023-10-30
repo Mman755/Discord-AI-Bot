@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import nextcord
 from nextcord.ext import commands
 import random
+import API
 
 load_dotenv()
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
