@@ -5,7 +5,6 @@ import os
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_KEY')
-print(OPENAI_API_KEY)
 
 
 headers = {
@@ -32,7 +31,6 @@ def get_response(USER_QUERY):
     )
 
     if response.status_code == 200:
-        print(response.text)
         response = response.json()['choices'][0]['message']['content'].strip()
         return response
 
