@@ -39,4 +39,3 @@ def get_response(USER_QUERY):
     else:
         error_message = f'Failed to obtain a response from the API\nStatus code: {response.status_code}\n{response.text}'
         return error_message
-
