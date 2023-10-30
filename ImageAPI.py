@@ -28,13 +28,10 @@ def get_image(PROMPT):
     )
 
     if response.status_code == 200:
-        print(response.text)
         image_url = response.json()['data'][0]['url']
-        print(image_url)
         return image_url
     else:
         error_message = f'Ooops... something went wrong'
-        print(response.text)
         return error_message
 
 
