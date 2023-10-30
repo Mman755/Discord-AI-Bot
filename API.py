@@ -20,7 +20,7 @@ def get_response(USER_QUERY):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": f'{USER_QUERY}'}
         ],
-        'max_tokens': 60,
+        'max_tokens': 500,
         'model': 'gpt-3.5-turbo'
     }
 
