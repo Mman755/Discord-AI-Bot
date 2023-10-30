@@ -24,7 +24,12 @@ def get_response(USER_QUERY):
         'model': 'gpt-3.5-turbo'
     }
 
-    response = requests.post('https://api.openai.com/v1/chat/completions', headers=headers, json=data)
+    response = requests.post(
+        'https://api.openai.com/v1/chat/completions',
+        headers=headers,
+        json=data,
+        timeout = 30
+    )
 
     if response.status_code == 200:
         print(response.text)

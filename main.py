@@ -22,7 +22,9 @@ async def on_ready():
 
 @bot.slash_command(guild_ids=[GUILD_ID], name="ask_question", description="Ask a question, anything!")
 async def question(interaction: nextcord.Interaction, question):
+    await interaction.response.defer()  # Defer the response to indicate the bot is processing
     response = API.get_response(question)
-    await interaction.response.send_message(response)
+    truncated_response = response[:1900] + '...' if len(response) > 1900 else response
+    await interaction.followup.send(truncated_response)  # Send a follow-up message with the response
 
 bot.run(BOT_TOKEN)
